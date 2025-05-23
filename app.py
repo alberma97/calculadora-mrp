@@ -602,12 +602,12 @@ def main():
 
     costo_pedido = st.number_input(
         "Costo de realizar un pedido (€/pedido)",
-        min_value=1, step=1, value=500,
+        min_value=1, step=1, value=1000,
         format="%d"
     )
     costo_mantenimiento = st.number_input(
         "Costo de mantenimiento por unidad (€/unidad y periodo)",
-        min_value=0.0, step=0.1, value=2.0,
+        min_value=0.0, step=0.1, value=1.0,
         format="%.1f"
     )
 
@@ -635,7 +635,7 @@ def main():
             for i in range(periodos)
         ]
 
-    necesidades_brutas_defaults = [0, 50, 200, 1500, 300, 500, 1200, 2000]
+    necesidades_brutas_defaults = [0, 0, 0, 0, 0, 0, 0, 0]
     recepciones_programadas_defaults = [0] * periodos
 
     necesidades_brutas = input_row(
